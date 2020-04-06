@@ -11,6 +11,10 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
+    Future.delayed(Duration(seconds: 3)).then((onValue) {
+      Navigator.pushNamed(context, '/home');
+    });
+
     _animationController =
         AnimationController(vsync: this, duration: Duration(seconds: 1));
     _animation = Tween<double>(begin: 0.0, end: 1.0).animate(
